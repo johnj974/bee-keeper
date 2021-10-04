@@ -1,44 +1,73 @@
 <h2>Hive Record</h2>
 <section>
-  <form class="example-form" [formGroup]="hiveForm" (ngSubmit)="submitForm()">
+  <form
+    class="example-form"
+    [formGroup]="hiveForm"
+    (ngSubmit)="submitForm()"
+    autocomplete="off"
+  >
     <mat-form-field class="example-full-width" appearance="fill">
-      <mat-label>Hive Number</mat-label>
-      <input matInput type="number" formControlName="hiveId" />
+      <mat-label>Hive ID</mat-label>
+      <input matInput type="number" formControlName="hiveId" min="0" />
+      <mat-error *ngIf="hiveForm.get('hiveId').invalid"
+        >Please enter a hive ID</mat-error
+      >
     </mat-form-field>
 
     <mat-form-field class="example-full-width" appearance="fill">
       <mat-label>Queen Located</mat-label>
       <input matInput type="text" formControlName="queen" />
+      <mat-error *ngIf="hiveForm.get('queen').invalid"
+        >Please enter if queen is present</mat-error
+      >
     </mat-form-field>
 
     <mat-form-field class="example-full-width" appearance="fill">
       <mat-label>Queen Cells Present</mat-label>
       <input matInput type="text" formControlName="cells" />
+      <mat-error *ngIf="hiveForm.get('cells').invalid"
+        >Please enter if queen cells present</mat-error
+      >
     </mat-form-field>
 
     <mat-form-field class="example-full-width" appearance="fill">
       <mat-label>Eggs</mat-label>
       <input matInput type="text" formControlName="eggs" />
+      <mat-error *ngIf="hiveForm.get('eggs').invalid"
+        >Please enter if eggs present</mat-error
+      >
     </mat-form-field>
 
     <mat-form-field class="example-full-width" appearance="fill">
       <mat-label>Larvae</mat-label>
       <input matInput type="text" formControlName="larvae" />
+      <mat-error *ngIf="hiveForm.get('larvae').invalid"
+        >Please enter if larvae present</mat-error
+      >
     </mat-form-field>
 
     <mat-form-field class="example-full-width" appearance="fill">
       <mat-label>Stores</mat-label>
       <input matInput type="text" formControlName="stores" />
+      <mat-error *ngIf="hiveForm.get('stores').invalid"
+        >Please enter if sufficent stores</mat-error
+      >
     </mat-form-field>
 
     <mat-form-field class="example-full-width" appearance="fill">
       <mat-label>Super Boxes</mat-label>
-      <input matInput type="text" formControlName="supers" />
+      <input matInput type="number" formControlName="supers" min="0" />
+      <mat-error *ngIf="hiveForm.get('supers').invalid"
+        >Please enter super boxes installed</mat-error
+      >
     </mat-form-field>
 
     <mat-form-field class="example-full-width" appearance="fill">
       <mat-label>Notes</mat-label>
       <textarea matInput formControlName="notes"></textarea>
+      <mat-error *ngIf="hiveForm.get('notes').invalid"
+        >Please enter ten or more characters</mat-error
+      >
     </mat-form-field>
 
     <button mat-raised-button color="primary" type="submit">Primary</button>
