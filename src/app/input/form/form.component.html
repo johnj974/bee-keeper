@@ -1,1 +1,46 @@
-<p>form works!</p>
+<h2>Hive Record</h2>
+<section>
+  <form class="example-form" [formGroup]="hiveForm" (ngSubmit)="submitForm()">
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Hive Number</mat-label>
+      <input matInput type="number" formControlName="hiveId" />
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Queen Located</mat-label>
+      <input matInput type="text" formControlName="queen" />
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Queen Cells Present</mat-label>
+      <input matInput type="text" formControlName="cells" />
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Eggs</mat-label>
+      <input matInput type="text" formControlName="eggs" />
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Larvae</mat-label>
+      <input matInput type="text" formControlName="larvae" />
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Stores</mat-label>
+      <input matInput type="text" formControlName="stores" />
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Super Boxes</mat-label>
+      <input matInput type="text" formControlName="supers" />
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Notes</mat-label>
+      <textarea matInput formControlName="notes"></textarea>
+    </mat-form-field>
+
+    <button mat-raised-button color="primary" type="submit">Primary</button>
+  </form>
+</section>
